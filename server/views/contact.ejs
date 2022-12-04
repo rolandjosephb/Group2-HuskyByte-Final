@@ -1,0 +1,133 @@
+<%- include partials/header.ejs %>
+
+<%- include partials/main_nav.ejs %>
+
+</style>
+</head>
+
+
+<body background="\Assets\images\background5.jpg">
+
+
+</body>
+
+
+<head>
+  <link rel="stylesheet" href="\Content\app1.css">
+</head>
+<style>
+
+    div {text-align: center;}
+    p {text-align: center;}
+    h3,h4,h1 {text-align: center;}
+    li {font-style: "font-family:verdana"}
+    
+    
+    
+    </style>
+
+<body class="bg">
+
+
+
+
+
+    
+                <h1> Contact Information</h1>
+                <h3>Name: Husky Byte<br>
+                Address: 123 Husky Street Scarborough<br>
+                Provice: Ontario<br>
+                Email: <a href="mailto:doge@huskybyte.ca">huskybyte@doge.ca</a><br><br><br>
+                
+
+
+                <form action ="mailto:doge@huskybyte.ca">
+
+
+                    <fieldset>
+            
+            
+                        <div id="myform">
+                <h2> Contact Us Form</h2>
+                <h3>Please Complete All The Fields Below</h3>
+                <label for="Gender ">Choose your Gender:</label>
+                <select name="Gender " id="Gender">
+                    <option value="Male ">Male</option>
+                    <option value="Female ">Female</option>
+                </select><br /><br />
+                <label>First Name:&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+                <input type="text" name="First Name " id="FirstName" required placeholder="Enter First Name" pattern="[A-Za-z]{3,}" title="Input Valid Name(Input Should be mimimum of 3 and only Characters)"><br><br>
+
+                <label>Last Name:&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+                <input type="text" name="Last Name " id="LastName" required placeholder="Enter Last Name" pattern="[A-Za-z]{3,}" title="Input Valid Name(Input Should be mimimum of 3 and only Characters)"><br><br>
+
+
+
+                <label>Address:&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+                <input type="text" name="Street Address " id="Address Number" required placeholder="###" pattern="[0-9]{1,}" title="Input Valid Street Number(It Should be a number)" maxlength="5" size="1">
+                <input type="text" name="Address " id="Address" required placeholder="Enter Address" pattern="[A-Za-z]{3,}" title="Input Valid Address Name(Input Should be mimimum of 3 and only Characters)">
+                <br>
+                <br>
+
+                <label>City:&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+                <input type="text" name="City " id="City" required placeholder="Enter City" pattern="[A-Za-z]{2,}" title="Input Valid City Name(Input Should be mimimum of 2 and only Characters)">
+                <br>
+                <br>
+
+              
+             
+                <label for="country">Country</label>
+                <select id="country" name="country">
+                  
+                  <option value="canada">Canada</option>
+                  <option value="usa">USA</option>
+                </select>
+
+                <label>Age:&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+                <input type="number" name="Age " id="Age" min="5" max="300" required placeholder="">
+                <br>
+                <br>
+
+                              
+
+                
+
+                <label>Email:&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+                <input type="email" name="Email " id="Email" required placeholder="Enter Email" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"
+                       title="Email should be in the following format: youruser@whatever.com or ca">
+
+                       <br>
+                       <br>
+                       <label for="subject">Subject</label><br>
+                       <textarea id="subject" name="subject" placeholder="Write the reason why you wanted to contact us." style="width: 60%; height: auto; "></textarea>
+
+                <br>
+                <br>
+                <button type="reset" value="Reset">Reset</button>
+                <input type="submit" id="submitBtn" value="Submit" />
+                
+ 
+            </div>
+
+<br>
+
+      
+
+
+           
+        </fieldset>
+    </form>
+
+
+
+
+  
+
+
+
+</body>
+</html>
+
+<%- include partials/bottom_nav.ejs %>
+
+<%- include partials/footer.ejs %>

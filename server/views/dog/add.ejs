@@ -1,0 +1,69 @@
+<%- include ../partials/header.ejs %>
+
+<%- include ../partials/main_nav.ejs %>
+
+<!-- Content for the Add page -->
+<div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <h1><%= title %></h1>
+
+            <form class="form" method="POST">
+                
+                <div class="form-group">
+                    <label for="nameTextField">Dog Name</label>
+                    <input type="text" class="form-control"
+                    id="nameTextField"
+                    placeholder="Enter the Dog Name"
+                    name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="ownerTextField">Owner</label>
+                    <input type="text" class="form-control"
+                    id="ownerTextField"
+                    placeholder="Enter the Dog's Owner"
+                    name="owner" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="ageTextField">Age</label>
+                    <input type="text" class="form-control"
+                    id="ageTextField"
+                    placeholder="Enter Dog's Age"
+                    name="age" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="descriptionTextArea">Description</label>
+                    <textarea type="text" class="form-control"
+                    id="descriptionTextArea"
+                    placeholder="Enter the a brief description of the dog"
+                    name="description" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="breedTextField">Breed</label>
+                    <input type="text" class="form-control"
+                    id="breedTextField"
+                    placeholder="Enter the Dog's Breed"
+                    name="breed" required>
+                </div>
+
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-edit"></i> Submit</button>
+                
+                    <a href="/dog-list" class="btn btn-warning">
+                        <i class="fas fa-undo"></i> Cancel</a>
+
+            </form>
+        </div>
+
+    </div>
+</div>
+
+
+
+<%- include ../partials/bottom_nav.ejs %>  
+
+<%- include ../partials/footer.ejs %>

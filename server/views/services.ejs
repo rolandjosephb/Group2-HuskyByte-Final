@@ -1,0 +1,132 @@
+<%- include partials/header.ejs %>
+
+<%- include partials/main_nav.ejs %>
+
+
+
+<head>
+  <link rel ="stylesheet" type="text/css" href="\Content\style.css">
+</head>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+      <title></title>
+  </head>
+  <body background="\Assets\images\background5.jpg">   
+    <h1 class="display-4">Welcome to Services Page</h1>
+
+  <br><br>
+ <div class="pic"> <img src="\Assets\images\gallery.gif"></div>
+
+      <div class="page">
+        
+          <div class="main_container">
+            
+              <div class="previous"><img src="\Assets\images\arrow.png" class="arrow_left"></div>
+              <div class="next"><img src="\Assets\images\arrow.png" class="arrow_right"></div>
+  
+              <div class="picContainer">
+                  <div class="picture" id="one"></div>
+                  <div class="picture" id="two"></div>
+                  <div class="picture" id="three"></div>
+  
+                  <div class="picture" id="four"></div>
+                  <div class="picture" id="five"></div>
+                  <div class="picture" id="six"></div>
+                  <div class="picture" id="seven"></div>
+                  <div class="picture" id="eight"></div>
+                  <div class="picture" id="nine"></div>
+  
+              </div>
+          </div>
+      </div>
+      <script type="text/javascript">
+          $(document).ready(function (){
+              var window_width = $(window).width();
+              var main_width = $(".main_container").width();
+              var picContainer = $(".picContainer");
+              var picture = $(".picture");
+              var slide_number = 0;
+  
+              picContainer.css("width", main_width * 3.05);
+              picture.css("width", picContainer.width() / 9);
+  
+              $(".next").click(function(){
+                  if (slide_number < 6) {
+                      slide_number++
+                      if (slide_number == 6) {
+                          $(".next").animate({ opacity: 0 });
+                      }
+                      else {
+                          $(".next").animate({ opacity: 1 });
+                      }
+                      if (slide_number == 0) {
+                          $(".previous").animate({ opacity: 0 });
+                      }
+                      else {
+                          $(".previous").animate({ opacity: 1 });
+                      }
+                      var picture_width = $(".picture").width();
+                      var pixels_moved = picture_width * slide_number;
+                      picContainer.animate({ marginLeft: -pixels_moved });
+                  }
+                  
+              });
+  
+              $(".previous").click(function () {
+                  if (slide_number > 0) {
+                      slide_number--
+                      if (slide_number == 0) {
+                          $(".previous").animate({ opacity: 0 });
+                      }
+                      else {
+                          $(".previous").animate({ opacity: 1 });
+                      }
+                      if (slide_number == 6) {
+                          $(".next").animate({ opacity: 0 });
+                      }
+                      else {
+                          $(".next").animate({ opacity: 1 });
+                      }
+                      var picture_width = $(".picture").width();
+                      var pixels_moved = picture_width * slide_number;
+                      picContainer.animate({ marginLeft: -pixels_moved });
+                  }
+  
+              });
+          });
+
+        
+      </script>
+
+
+<div class="list">
+<h2>We Offer The Following Services</h2>
+<div class="column"><ul>
+  <li>Dog Grooming</li>
+  <li>Dog Traning</li>
+  <li>Dog Day Care</li>
+  <li>Dog Sitter</li>
+</ul>
+  
+
+</div>
+<div class="column">
+    <ul>
+    <li>Dog Spa</li>
+    <li>Dog Play Place</li>
+    <li>Dog Walker</li>
+    <li>Dog Playmate</li>
+</ul>
+</div>
+
+</div>
+<br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+
+  
+       
+
+
+<%- include partials/bottom_nav.ejs %>
+
+<%- include partials/footer.ejs %>

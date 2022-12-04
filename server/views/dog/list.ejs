@@ -1,0 +1,63 @@
+<%- include ../partials/header.ejs %>
+
+<%- include ../partials/main_nav.ejs %>
+<style>
+
+th{background-color: #797979;} 
+
+</style>
+<body background="\Assets\images\background6.jpg">   </body>
+  <!-- Main Content -->
+  <main class="container">
+    <div class="row">
+        <div class="offset-md-1 col-md-11">
+            <h1>Welcome to Dog's Registration Page</h1>
+            <h3>Please put your dog information</h3>
+            <a href="/dog-list/add" class="btn btn-primary" role="button">
+            <i class="fas fa-plus-circle"></i> Add a Dog</a>
+            <br>
+            <table class="table table-bordered table-striped table-hover" >
+                <!-- Header Row-->
+                <tr class="d-flex">
+                    <th class="text-center col-2">Dog's Name</th> <!--title-->
+                    <th class="text-center col-2">Owner</th><!--Author-->
+                    <th class="text-center col-1">Age</th><!--Year-->
+                    <th class="col-3">Description</th><!--Description-->
+                    <th class="text-center col-2">Breed</th><!--Price-->
+                    <th class="text-center col-1"></th>
+                    <th class="text-center col-1"></th>
+                </tr>
+
+                <!-- Repeatable Template Row -->
+
+                <% for(let count = 0; count < DogList.length; count++) { %>
+                    <tr class="d-flex">
+                        <td class="text-center col-2"><%= DogList[count].name %></td>
+                        <td class="text-center col-2"><%= DogList[count].owner %></td>
+                        <td class="text-center col-1"><%= DogList[count].age %></td>
+                        <td class="col-3"><%= DogList[count].description %></td>
+                        <td class="text-center col-2"><%= DogList[count].breed %></td>
+                        <td class="text-center col-1">
+                            <a href="/dog-list/edit/<%= DogList[count]._id %>" class="btn btn-primary btn-sm">
+                            <i class="fas fa-pencil-alt"></i> Edit</a>
+                        </td>
+                        <td class="text-center col-1">
+                            <a href="/dog-list/delete/<%= DogList[count]._id %>" class="btn btn-danger btn-sm">
+                            <i class="fas fa-trash-alt"></i> Delete</a>
+                        </td>
+                    </tr>
+                <% } %>
+            </table>
+        </div>
+    </div>
+  </main>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<%- include ../partials/bottom_nav.ejs %>  
+
+<%- include ../partials/footer.ejs %>
+  
+
+
+
+
+
